@@ -1,0 +1,11 @@
+
+1. Registration(should be able to enter data and store in database, email should not be same which is 
+stored in db, password not less than 8, passwordhashed for protection, after that new page
+should be opened mainpage.php) DONE
+2. Login(connect with db and should open by already entered data, new page opened mainpage.php) DONE
+3. action_page (is our connection with database) DONE
+4. Logout(is in mainpage.php, helps to logout) DONE
+5. mainpage.php (should not be able to open without registration or login) DONE
+
+6. Delete (should be able to delete data of user by user themselves)
+7. Update (update the personal info of user by themselves)
