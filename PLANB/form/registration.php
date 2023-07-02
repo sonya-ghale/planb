@@ -66,12 +66,7 @@ if (mysqli_stmt_prepare($stmt, $sql)) {
     die("Something went wrong");
 } 
            }
-            // Set the user ID in the session
-    $_SESSION["id"] = mysqli_insert_id($conn); 
-    // Assuming you're using an auto-increment ID
- // Redirect to the information page
- header("Location: /planb/navigation_bar/information.php");
-    exit();
+     
         }
         ?>
         <form action="registration.php" method="post">
@@ -97,6 +92,8 @@ if (mysqli_stmt_prepare($stmt, $sql)) {
         <div>
         <div><p>Already Registered <a href="login.php">Login Here</a></p></div>
       </div>
+      <a href="/planb/pages/firstpage.php"> 
+        <input type="submit" value="Back"></a>
     </div>
 </body>
 </html>
