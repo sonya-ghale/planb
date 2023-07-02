@@ -32,9 +32,10 @@ if (isset($_SESSION["user"])) {
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
                 $user = mysqli_fetch_assoc($result);
+
                 if ($user) {
-                    $passwordHash = $user['password_hash'];
-                    if (password_verify($password, $passwordHash)) {
+                    $storedPasswordHash = $user['password_hash'];
+                    if (password_verify($password, $storedPasswordHash)) {
                         $_SESSION["user"] = $user; // Store user data in the session
                         header("Location: /planb/pages/mainpage.php");
                         exit();
@@ -47,6 +48,7 @@ if (isset($_SESSION["user"])) {
             } else {
                 echo "<div class='alert alert-danger'>Something went wrong</div>";
             }
+            mysqli_stmt_close($stmt);
         }
         ?>
 
@@ -64,6 +66,11 @@ if (isset($_SESSION["user"])) {
         <div>
             <p>Not registered yet? <a href="registration.php">Register Here</a></p>
         </div>
+        <div>
+        <a href="/planb/pages/firstpage.php"> 
+        <input type="submit" value="Back">
+        </div>
     </div>
 </body>
 </html>
+ 
